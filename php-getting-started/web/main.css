@@ -1,0 +1,135 @@
+
+body
+{
+	
+	width: 97%;
+	background-color:White;
+     
+}
+#big_wraper
+{
+                
+    width: 100%;
+    height: 100%;        
+}
+
+#top_manu
+{ 
+    
+    position: relative;
+    margin-top:3%;
+    width: 100%;
+    padding-top: 30px;
+    padding-right: 10px;
+    padding-bottom: 20%;
+    padding-left: 10px;
+    background-color: #25064d;
+	background-image: url("images/mexicocity.jpg");
+  
+    
+}
+
+#pPhoto
+{
+	position: absolute;
+    top: 190px;
+    left: 10%;
+    width: 300px;
+    height:350px;
+	background-image: url("images/profilePic.jpg");
+	background-color:White;
+}
+
+#pPhoto:hover
+{
+	 border: 5px solid #eee1f3;
+	 cursor: hand;
+	 cursor: pointer;
+}
+
+#top_manu li
+{
+	display:inline-block;
+	padding:10px;
+	font: bold 14px Tahoma; 
+    text-decoration-color: #fe71bf;
+}
+
+#top_manu a:link
+{
+    list-style-position: inside;
+    text-decoration: none;
+    color:#9282a6;
+    font-family: 'Droid Sans', sans-serif;
+}
+#top_manu a:visited
+{
+    color: #9282a6;
+}
+#top_manu a:hover
+{
+    color:#5463a0;
+    text-shadow:  1px 1px 1px black;
+    text-decoration:none;
+
+}
+
+#top_manu h1 
+{
+    color: white;
+    /* font-family: 'Droid Sans', bold, sans-serif; */
+	text-align: center;
+	text-shadow: -1px -1px 0px rgba(255,255,255,0.3), 1px 1px 0px rgba(0,0,0,0.8);
+}
+
+h1{
+    font: bold 40px Tahoma;
+    color:#6C46AF ;
+ }
+h2{
+    color: #de8f2f;
+    /* font-family: 'Droid Sans', bold, sans-serif; */
+	text-align: justify;
+	text-shadow: -1px -1px 0px rgba(255,255,255,0.3), 1px 1px 0px rgba(0,0,0,0.8);
+    
+}
+ul
+{
+    list-style-position: inside;
+}
+a:link
+{
+    list-style-position: inside;
+    color:#9282a6;
+    font: bold 20px Tahoma;
+}
+a:visited
+{
+    color: #9282a6;
+}
+a:hover
+{
+    color:#5463a0;
+    text-shadow:  1px 1px 1px black;
+    text-decoration:underline;
+
+}
+
+
+
+#main
+{
+
+    margin: auto;
+    position: relative;
+    width: 70%;
+    margin-top: 15%;   /*displays appropiadly at the top*/
+	font:20px Tahoma; 
+    text-decoration-color: #fe71bf;
+    text-align: justify;
+    
+ 
+}
+
+
+
