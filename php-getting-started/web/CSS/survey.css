@@ -76,6 +76,17 @@ h2{
 	text-shadow: -1px -1px 0px rgba(255,255,255,0.3), 1px 1px 0px rgba(0,0,0,0.8);
     
 }
+
+
+h3{
+    color: #412be6;
+    /* font-family: 'Droid Sans', bold, sans-serif; */
+	text-align: justify;
+	
+    
+}
+
+
 ul
 {
     list-style-position: inside;

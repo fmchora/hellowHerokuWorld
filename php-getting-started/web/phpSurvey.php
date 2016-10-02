@@ -1,3 +1,14 @@
+<?php session_start(); 
+
+if (isset($_SESSION['timeUsingProduct'])&&isset($_SESSION['experience'])
+	&&isset($_SESSION['websiteLearn'])&&isset($_SESSION['satisfiedWebsite']))
+	{
+		$_SESSION['redirect'] = true;
+		header("Location: https://fierce-earth-82181.herokuapp.com/surveyResults.php"); /* Redirect browser */
+die();}?>
+
+
+
 <!DOCTYPE html>
 
 
@@ -27,9 +38,10 @@
     <div id="main"> 
 	
 	<div id="line"><hr></div>
-         <form action="surveyResults.php" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+	<a href="surveyResults.php">Answers</a>
+         <form action="surveyResults.php" method="POST">
          
-			<p>	How long have you used our products/service?  <br>
+			<p>	How long have you used our products/service? </p> 
 				<select name="timeUsingProduct">
 				<option value="">Select...</option>
 				<option value="Less than 6 months">Less than 6 months</option>
@@ -37,7 +49,6 @@
 				<option value="3 years to less than 5 years">3 years to less than 5 years</option>
 				<option value="5 years or more">5 years or more</option>
 				</select>
-		</p>
 		
 		<p>Which of the following categories best describes your last experience purchasing
 		a product or service on our website? Would you say that your experience was:</p>
