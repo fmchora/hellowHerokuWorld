@@ -18,7 +18,6 @@
         <ul>
 
             <li> <a href="assignments.html "> CS 313 Assignments</a></li>
-            <li> <a href="insertnewitems.php"> Insert new Items </a></li>
 
         </ul>
 
