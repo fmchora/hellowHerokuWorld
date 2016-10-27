@@ -16,16 +16,23 @@ body
 #top_manu
 { 
     
-    position: relative;
-    margin-top:3%;
+
+    margin-top:1%;
     width: 100%;
-    padding-top: 30px;
-    padding-right: 10px;
-    padding-bottom: 20%;
-    padding-left: 10px;
+
     background-color: #25064d;
-	background-image: url("../images/mexicocity.jpg");
+
   
+    
+    
+    
+
+    height: 200%;
+    border: 1px solid #c3c3c3;
+    display: -webkit-flex; /* Safari */
+    -webkit-flex-wrap: wrap; /* Safari 6.1+ */
+    display: flex;
+    flex-wrap: wrap;
     
 }
 
@@ -117,7 +124,6 @@ a:hover
     margin: auto;
     position: relative;
     width: 50%;
-    margin-top: -10%;
 	font:20px Tahoma; 
     text-decoration-color: #fe71bf;
 	background-color: White;

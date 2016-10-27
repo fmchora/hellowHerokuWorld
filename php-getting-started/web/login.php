@@ -1,0 +1,1 @@
+<?php include 'dbaccess1.php';?>
