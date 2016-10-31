@@ -1,4 +1,8 @@
-<?php include 'dbaccess1.php';?>
+<?php include 'dbaccess1.php';
+session_start();
+
+
+?>
 
 <!DOCTYPE html>
 
@@ -18,18 +22,24 @@
         <ul>
 
             <li> <a href="assignments.html "> CS 313 Assignments</a></li>
+            <li> <a href="logOut.php ">Log out</a></li>
+
 
         </ul>
-
+        
     </nav>
 
 
     <div id="main"> 
 	
-        <h1>My items</h1>
+        
 <?php
         
 try {
+    
+    echo '<h1>Welcome ' . $_SESSION['username'];
+    echo '<h2>My items</h2>';
+    
  $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
 
 	// this line makes PDO give us an exception when there are problems, and can be very helpful in debugging!
@@ -38,12 +48,15 @@ try {
 	// prepare the statement
 	$statement = $db->prepare('SELECT my_items.my_item_id, my_items.my_items_id, my_items.person_id, items.name, my_items.quantity FROM my_items 
     INNER JOIN items
-    ON my_items.my_item_id=items.item_id
+    ON my_items.my_item_id=items.item_id WHERE my_items.person_id=:person_id
     ORDER BY items.name ASC');
+    
+    $statement->bindParam(':person_id', $_SESSION['person_id']);
+    
 	$statement->execute();
 
 	// Go through each result
-    
+    echo $_SESSION['person_id'];
     echo '<table>';
     echo ' <tr> <th> Item </th> <th>Quantity</th> <th>Item ID</th></tr>';
 	while ($row = $statement->fetch(PDO::FETCH_ASSOC))

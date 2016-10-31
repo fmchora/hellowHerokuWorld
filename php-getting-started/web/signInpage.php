@@ -25,7 +25,6 @@ if(isset($_SESSION['username'])){
         <ul>
 
             <li> <a href="assignments.html "> CS 313 Assignments</a></li>
-            
 
         </ul>
 
@@ -35,9 +34,9 @@ if(isset($_SESSION['username'])){
     <div id="main"> 
 
 
-<h1>Log in</h1>
+<h1>Sign up</h1>
         
-<form id="mainForm" action="logindb.php" method="POST">
+<form id="mainForm" action="signIndb.php" method="POST">
     
 
 
@@ -48,19 +47,11 @@ if(isset($_SESSION['username'])){
         
     <label for="password">Password</label>
 	<input type="password" id="password" name="password"></input>
-	<br />
-    <p><a href="signInpage.php">Sign up</a></divp>
-    <br />
+	<br /><br />
+
 
 <input type="submit" value="Login" />
     </form>
     </div>
 </body>
-</html><?
-session_start();
-if(isset($_SESSION['username'])){
-    header("Location: my_items.php");
-    die();
-}
-?>
-
+</html>

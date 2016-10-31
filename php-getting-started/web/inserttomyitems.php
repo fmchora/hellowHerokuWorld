@@ -1,7 +1,8 @@
 <?php
+session_start();
 $my_item_id = $_POST['my_item_id'];
 $quantity = $_POST['quantity'];
-$person_id = 1;
+//$person_id = 1;
 
 
 echo "$item_id\n";
@@ -20,7 +21,7 @@ try {
 
 	$statement = $db->prepare($query);
 
- 	$statement->bindParam(':person_id', $person_id);   
+ 	$statement->bindParam(':person_id', $_SESSION['person_id']);   
 	$statement->bindParam(':item_id', $my_item_id);
 	$statement->bindParam(':quantity', $quantity);
 

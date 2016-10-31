@@ -1,12 +1,7 @@
-<?php
-session_start();
-$my_item_id = $_POST['my_item_id'];
-
-//$person_id = 1;
-
-
-echo "$my_item_id\n";
-echo "$quantity\n";
+<?php include 'dbaccess1.php';
+$username = $_POST['username'];
+$password = $_POST['password'];
+$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
 include 'dbaccess1.php';
         
@@ -16,17 +11,19 @@ try {
 	// this line makes PDO give us an exception when there are problems, and can be very helpful in debugging!
 	$db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
 
-	// First Add the Scripture
-	$query = 'DELETE FROM my_items WHERE my_items_id = :my_items_id AND person_id=:person_id';
+	$query = 'INSERT INTO person(username, password) VALUES(:username, :password)';
 
 	$statement = $db->prepare($query);
 
- 	$statement->bindParam(':my_items_id', $my_item_id);   
-    $statement->bindParam(':person_id', $_SESSION['person_id']); 
+	$statement->bindParam(':username', $username);
+
+	// **********************************************
+	// NOTICE: We are submitting the hashed password!
+	// **********************************************
+	$statement->bindParam(':password', $password);
+	$statement->bindParam(':password', $password);
 
 	$statement->execute();
-
-
 }
 catch (Exception $ex)
 {
@@ -36,14 +33,12 @@ catch (Exception $ex)
 	die();
 }
 
-// finally, redirect them to a new page to actually show the topics
-header("Location: my_items.php");
+
+// finally, redirect them to the sign in page
+header("Location: login.php");
 die(); // we always include a die after redirects. In this case, there would be no
        // harm if the user got the rest of the page, because there is nothing else
        // but in general, there could be things after here that we don't want them
        // to see.
-
-
-
 
 ?>
